@@ -2,7 +2,7 @@
 // @name         Neptun Rice
 // @namespace    https://glorantv.hu/
 // @homepage     https://github.com/glorantq/neptun-rice
-// @version      v1.3.4
+// @version      v1.3.5
 // @description  Extensive theming for Neptun (dark base only)
 // @author       Gerber Lóránt Viktor
 // @match        https://neptun.elte.hu/*
@@ -15,7 +15,8 @@
 // @updateURL    https://github.com/glorantq/neptun-rice/releases/latest/download/Neptun.Rice.user.js
 // @downloadURL  https://github.com/glorantq/neptun-rice/releases/latest/download/Neptun.Rice.user.js
 // @supportURL   https://github.com/glorantq/neptun-rice/issues
-// @require      https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js
+// @require      https://code.jquery.com/jquery-1.11.1.min.js
+// @require      https://code.jquery.com/ui/1.11.1/jquery-ui.min.js
 // ==/UserScript==
 
 (async function() {
@@ -241,8 +242,8 @@
             if(themeData != null) {
                 let theme = JSON.parse(themeData);
 
-                for(let setting of listProperties()) {
-                    setting.value = theme[setting.name];
+                for(let setting in theme) {
+                    document.querySelector(`.ndm_property_list > li input[name=${setting}]`).value = theme[setting];
                 }
             }
         }
