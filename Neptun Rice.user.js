@@ -44,6 +44,9 @@
     let neptunFont = `system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`;
 
     let cssBaseUrl = `https://rawcdn.githack.com/glorantq/neptun-rice/${GM_info.script.version}/css`;
+    if(GM_info.script.version === "local") {
+        cssBaseUrl = "http://127.0.0.1:8080/css"
+    }
 
     let loginCssUrl = GM_getValue("loginCssUrl", `${cssBaseUrl}/ndm_login.css`);
     let neptunCssUrl = GM_getValue("neptunCssUrl", `${cssBaseUrl}/ndm_neptun.css`);
