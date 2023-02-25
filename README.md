@@ -2,7 +2,7 @@
 Ez a kis userscript átdolgozza a Neptun felületét, hogy könnyebb legyen nézegetni egész nap. Sajnos mivel magyarok csinálták az oldalt, nem mindent lehet témázni rajta úgy ahogy szeretném, de már így is egész jó.
 
 ### Telepítés
-A használathoz szükséged lesz egy userscript managerre (csak **Tampermonkey** van tesztelve). Beszerezheted innen (Neptun PowerUp!-tól lopva a linkeket)
+A használathoz szükséged lesz egy userscript managerre. Asztali böngészőkhöz beszerezheted a Tampermonkeyt innen (Neptun PowerUp!-tól lopva a linkeket):
 * [Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey)
 * [Google Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
 * [Legacy Microsoft Edge](https://www.microsoft.com/store/apps/9NBLGGH5162S)
@@ -10,13 +10,15 @@ A használathoz szükséged lesz egy userscript managerre (csak **Tampermonkey**
 * [Opera](https://addons.opera.com/en/extensions/details/tampermonkey-beta)
 * [Safari](https://apps.apple.com/us/app/tampermonkey/id1482490089)
 
+A script továbbá tesztelve van iOS Safari böngészőben is, ezzel a userscript managerrel: [Userscripts](https://apps.apple.com/us/app/userscripts/id1463298887)
+
 Ha megvan, tudod telepíteni a scriptet, ehhez [kattints ide](https://github.com/glorantq/neptun-rice/releases/latest/download/Neptun.Rice.user.js).
 
 ### Változtatások
 - Alapértelmezett sötét mód az oldalnak, betűtípus lecserélve, jó kis Verdana helyett a rendszer alapértelmezett UI fontja
   ![image](https://user-images.githubusercontent.com/17655680/221344653-652c84d3-a4d4-4c44-82a5-2c78b120a5c1.png)
 - Minden szín az oldalon személyre szabható
-  ![image](https://user-images.githubusercontent.com/17655680/221344683-aaa24604-7904-4fe3-b72e-10da055135fd.png)
+  ![image](https://user-images.githubusercontent.com/17655680/221350583-667d166b-f5ac-4efc-98ad-230ba1d5397e.png)
 - Csomó kisebb idiotikus UI-fixek:
 
   | Before | After |
