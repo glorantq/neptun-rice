@@ -520,9 +520,15 @@ div.tartalom>div.elem {
 #h_addsubjects_gridSubjects_grid_body_div #Addsubject_course1_gridCourses_bodytable tr.Row1_Bold_sel td,
 #h_addsubjects_gridSubjects_grid_body_div #Addsubject_course1_gridCourses_grid_body_div tr.Row1_Bold_sel td,
 #h_addsubjects_gridSubjects_grid_body_div #h_addsubjects_gridSubjects_bodytable tr.context_selectedrow td,
-#h_signedexams_gridExamList_grid_body_div #h_signedexams_gridExamList_bodytable tr.npu_missed td {
+#h_signedexams_gridExamList_grid_body_div #h_signedexams_gridExamList_bodytable tr.npu_missed td,
+body #h_addsubjects_gridSubjects_bodytable tr.Row1_Bold td,
+body #Addsubject_course1_gridCourses_bodytable tr.Row1_sel td,
+body #Addsubject_course1_gridCourses_grid_body_div tr.Row1_sel td,
+body #Addsubject_course1_gridCourses_bodytable tr.Row1_Bold_sel td,
+body #Addsubject_course1_gridCourses_grid_body_div tr.Row1_Bold_sel td,
+body #h_addsubjects_gridSubjects_bodytable tr.context_selectedrow td {
     background-color: var(--npuYellow) !important;
-    color: var(--textColor) !important;
+    color: var(--darkText) !important;
 }
 
 #h_addsubjects_gridSubjects_grid_body_div #h_addsubjects_gridSubjects_bodytable tr.npu_completed td,
@@ -530,7 +536,7 @@ div.tartalom>div.elem {
 #h_signedexams_gridExamList_grid_body_div #h_signedexams_gridExamList_bodytable tr.npu_completed td,
 #h_markbook_gridIndexEntry_grid_body_div #h_markbook_gridIndexEntry_bodytable tr.SubjectCompletedRow td {
     background-color: var(--npuGreen) !important;
-    color: var(--textColor) !important;
+    color: var(--darkText) !important;
 }
 
 #h_addsubjects_gridSubjects_grid_body_div #h_addsubjects_gridSubjects_bodytable tr td.npu_choice_mark,
@@ -1045,7 +1051,7 @@ li.menu-item {
     #ndm_settings_inner {
         grid-template-columns: 1fr;
     }
-  }
+}
 
 #ndm_settings_buttons {
     display: flex;
