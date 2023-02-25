@@ -1,0 +1,42 @@
+body, a, header, footer {
+    color: var(--textColor) !important;
+}
+
+body {
+    background-color: var(--backgroundColor) !important;
+}
+
+footer.page-footer, nav.navbar, footer {
+    background-color: var(--backgroundColor) !important;
+}
+
+div.card, .list-group-item {
+    background-color: var(--darkerBackground) !important;
+}
+
+.border-bottom {
+    border-style: none !important;
+}
+
+main > div > h1, main > div.no-gutters, main > div.mx-auto.grid {
+    display: none;
+}
+
+.dropdown-menu {
+    background-color: var(--darkerBackground) !important;
+    color: var(--textColor) !important;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: var(--backgroundColor) !important;
+}
+
+.dropdown-divider {
+    border-color: var(--backgroundColor) !important;
+}
+
+.alert-info {
+    background-color: var(--darkerBackground) !important;
+    border-color: var(--backgroundColor) !important;
+    color: var(--textColor) !important;
+}
