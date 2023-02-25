@@ -1,4 +1,4 @@
-# Neptun Rice
+# Neptun Rice ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/glorantq/neptun-rice?include_prereleases&style=flat-square) ![GitHub all releases](https://img.shields.io/github/downloads/glorantq/neptun-rice/total?style=flat-square)
 Ez a kis userscript átdolgozza a Neptun felületét, hogy könnyebb legyen nézegetni egész nap. Sajnos mivel magyarok csinálták az oldalt, nem mindent lehet témázni rajta úgy ahogy szeretném, de már így is egész jó.
 
 ### Telepítés
