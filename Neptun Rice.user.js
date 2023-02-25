@@ -2,15 +2,15 @@
 // @name         Neptun Rice
 // @namespace    https://glorantv.hu/
 // @homepage     https://github.com/glorantq/neptun-rice
-// @version      v1.3.1
+// @version      v1.3.2
 // @description  Extensive theming for Neptun (dark base only)
 // @author       Gerber Lóránt Viktor
 // @match        https://neptun.elte.hu/*
 // @match        https://*.neptun.elte.hu/*
-// @grant        GM_addStyle
-// @grant        GM_setValue
-// @grant        GM_getValue
-// @grant        GM_deleteValue
+// @grant        GM.addStyle
+// @grant        GM.setValue
+// @grant        GM.getValue
+// @grant        GM.deleteValue
 // @run-at       document-start
 // @updateURL    https://github.com/glorantq/neptun-rice/releases/latest/download/Neptun.Rice.user.js
 // @downloadURL  https://github.com/glorantq/neptun-rice/releases/latest/download/Neptun.Rice.user.js
@@ -20,37 +20,37 @@
 (function() {
     'use strict';
 
-    let textColor = GM_getValue("textColor", "#dddddd");
-    let darkText = GM_getValue("darkText", "#121212");
-    let backgroundColor = GM_getValue("backgroundColor", "#1f1e1e");
-    let darkerBackground = GM_getValue("darkerBackground", "#171616");
+    let textColor = GM.getValue("textColor", "#dddddd");
+    let darkText = GM.getValue("darkText", "#121212");
+    let backgroundColor = GM.getValue("backgroundColor", "#1f1e1e");
+    let darkerBackground = GM.getValue("darkerBackground", "#171616");
 
-    let neptunBorderColor = GM_getValue("neptunBorderColor", "#232222");
-    let neptunLightGray = GM_getValue("neptunLightGray", "#313131");
-    let neptunDarkGray = GM_getValue("neptunDarkGray", "#121212");
-    let neptunAlertBackground = GM_getValue("neptunAlertBackground", "#FFDCA9");
-    let neptunAlertBorder = GM_getValue("neptunAlertBorder", "#FAAB78");
-    let neptunLighterGray = GM_getValue("neptunLighterGray", "#474747");
-    let neptunMidDark = GM_getValue("neptunMidDark", "#232222");
+    let neptunBorderColor = GM.getValue("neptunBorderColor", "#232222");
+    let neptunLightGray = GM.getValue("neptunLightGray", "#313131");
+    let neptunDarkGray = GM.getValue("neptunDarkGray", "#121212");
+    let neptunAlertBackground = GM.getValue("neptunAlertBackground", "#FFDCA9");
+    let neptunAlertBorder = GM.getValue("neptunAlertBorder", "#FAAB78");
+    let neptunLighterGray = GM.getValue("neptunLighterGray", "#474747");
+    let neptunMidDark = GM.getValue("neptunMidDark", "#232222");
 
-    let neptunPrimary = GM_getValue("neptunPrimary", "#EB8242");
-    let neptunPrimaryDark = GM_getValue("neptunPrimaryDark", "#C9753D");
-    let neptunPrimaryLight = GM_getValue("neptunPrimaryLight", "#F1AE89");
+    let neptunPrimary = GM.getValue("neptunPrimary", "#EB8242");
+    let neptunPrimaryDark = GM.getValue("neptunPrimaryDark", "#C9753D");
+    let neptunPrimaryLight = GM.getValue("neptunPrimaryLight", "#F1AE89");
 
-    let npuGreen = GM_getValue("npuGreen", "#83B582");
-    let npuYellow = GM_getValue("npuYellow", "#FCDDB0");
-    let npuRed = GM_getValue("npuRed", "#EF4B4B");
+    let npuGreen = GM.getValue("npuGreen", "#83B582");
+    let npuYellow = GM.getValue("npuYellow", "#FCDDB0");
+    let npuRed = GM.getValue("npuRed", "#EF4B4B");
 
     let neptunFont = `system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`;
 
-    let cssBaseUrl = `https://rawcdn.githack.com/glorantq/neptun-rice/${GM_info.script.version}/css`;
-    if(GM_info.script.version === "local") {
+    let cssBaseUrl = `https://rawcdn.githack.com/glorantq/neptun-rice/${GM.info.script.version}/css`;
+    if(GM.info.script.version === "local") {
         cssBaseUrl = "http://127.0.0.1:8080/css"
     }
 
-    let loginCssUrl = GM_getValue("loginCssUrl", `${cssBaseUrl}/ndm_login.css`);
-    let neptunCssUrl = GM_getValue("neptunCssUrl", `${cssBaseUrl}/ndm_neptun.css`);
-    let imagesCssUrl = GM_getValue("imagesCssUrl", `${cssBaseUrl}/ndm_images.css`);
+    let loginCssUrl = GM.getValue("loginCssUrl", `${cssBaseUrl}/ndm_login.css`);
+    let neptunCssUrl = GM.getValue("neptunCssUrl", `${cssBaseUrl}/ndm_neptun.css`);
+    let imagesCssUrl = GM.getValue("imagesCssUrl", `${cssBaseUrl}/ndm_images.css`);
 
 
     let injectorCss = String.raw`
@@ -82,7 +82,7 @@
 
     console.log("[Neptun Rice] Injecting CSS");
 
-    GM_addStyle(injectorCss);
+    GM.addStyle(injectorCss);
 
     window.addEventListener("load", () => {
         console.log("[Neptun Rice] Window loaded, continuing");
@@ -109,7 +109,7 @@
         let scriptName = document.createElement("a");
         scriptName.href = "https://github.com/glorantq/neptun-rice";
         scriptName.target = "_blank";
-        scriptName.innerText = `${GM_info.script.name} ${GM_info.script.version}:`;
+        scriptName.innerText = `${GM.info.script.name} ${GM.info.script.version}:`;
 
         let settingsButton = document.createElement("a");
         settingsButton.innerText = "Settings";
@@ -127,7 +127,7 @@
         footer.appendChild(attribution2);
 
         let settingsDialog = document.createElement("div");
-        settingsDialog.title = `${GM_info.script.name} Settings`;
+        settingsDialog.title = `${GM.info.script.name} Settings`;
         settingsDialog.id = "ndm_settings_dialog";
         settingsDialog.innerHTML = `
 <div class="ndm_property_wrapper">
@@ -178,7 +178,7 @@
 <div class="ndm_property_wrapper">
 <h2>Miscellaneous</h2>
 <ul class="ndm_property_list">
-    <li><span>Version</span><span>${GM_info.script.version}</span></li>
+    <li><span>Version</span><span>${GM.info.script.version}</span></li>
     <li><span>Reset to default</span><a class="GadgetMenuItem" id="ndm_reset_colors_button">Reset</a></li>
     <li><span>Export theme</span><a class="GadgetMenuItem" id="ndm_export_button">Export</a></li>
     <li><span>Import theme</span><a class="GadgetMenuItem" id="ndm_import_button">Import</a></li>
@@ -207,7 +207,7 @@
             }
 
             for(let setting of listProperties()) {
-                GM_deleteValue(setting.name);
+                GM.deleteValue(setting.name);
             }
 
             alert("Deleted all saved colours!");
@@ -245,7 +245,7 @@
         let saveColors = () => {
             for(let setting of listProperties()) {
                 console.log(`${setting.name} => ${setting.value}`);
-                GM_setValue(setting.name, setting.value);
+                GM.setValue(setting.name, setting.value);
             }
 
             window.location.reload();
@@ -254,7 +254,7 @@
         $("#ndm_settings_dialog").dialog({
             autoOpen: false, modal: true, stack: true, resizable: true,
             width: 670, height: 670,
-            title: `${GM_info.script.name} Settings`,
+            title: `${GM.info.script.name} Settings`,
             buttons: [
                 {
                     text: "Cancel",
