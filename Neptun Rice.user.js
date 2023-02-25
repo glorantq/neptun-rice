@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Neptun Rice
 // @namespace    https://glorantv.hu/
-// @homepage     https://glorantv.hu/
-// @version      1.1.0
+// @homepage     https://github.com/glorantq/neptun-rice
+// @version      v1.2.1
 // @description  Extensive theming for Neptun (dark base only)
 // @author       Gerber Lóránt Viktor
 // @match        https://neptun.elte.hu/*
@@ -12,9 +12,9 @@
 // @grant        GM_getValue
 // @grant        GM_deleteValue
 // @run-at       document-start
-// @updateURL    https://glorantv.web.elte.hu/files/Neptun%20Rice.user.js
-// @downloadURL  https://glorantv.web.elte.hu/files/Neptun%20Rice.user.js
-// @supportURL   https://glorantv.web.elte.hu/
+// @updateURL    https://github.com/glorantq/neptun-rice/releases/latest/download/Neptun.Rice.user.js
+// @downloadURL  https://github.com/glorantq/neptun-rice/releases/latest/download/Neptun.Rice.user.js
+// @supportURL   https://github.com/glorantq/neptun-rice/issues
 // ==/UserScript==
 
 (function() {
@@ -43,9 +43,43 @@
 
     let neptunFont = `system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`;
 
-    let loginCssUrl = GM_getValue("loginCssUrl", "http://127.0.0.1:8080/css/ndm_login.css");
-    let neptunCssUrl = GM_getValue("neptunCssUrl", "http://127.0.0.1:8080/css/ndm_neptun.css");
-    let imagesCssUrl = GM_getValue("imagesCssUrl", "http://127.0.0.1:8080/css/ndm_images.css");
+    let cssBaseUrl = `https://cdn.jsdelivr.net/gh/glorantq/neptun-rice@${GM_info.script.version}/css`;
+
+    let loginCssUrl = GM_getValue("loginCssUrl", `${cssBaseUrl}/ndm_login.css`);
+    let neptunCssUrl = GM_getValue("neptunCssUrl", `${cssBaseUrl}/ndm_neptun.css`);
+    let imagesCssUrl = GM_getValue("imagesCssUrl", `${cssBaseUrl}/ndm_images.css`);
+
+
+    let injectorCss = String.raw`
+    @import url("${loginCssUrl}");
+    @import url("${imagesCssUrl}");
+    @import url("${neptunCssUrl}");
+
+    :root {
+        --textColor: ${textColor};
+        --backgroundColor: ${backgroundColor};
+        --darkerBackground: ${darkerBackground};
+        --neptunBorderColor: ${neptunBorderColor};
+        --neptunLightGray: ${neptunLightGray};
+        --neptunDarkGray: ${neptunDarkGray};
+        --neptunAlertBackground: ${neptunAlertBackground};
+        --neptunAlertBorder: ${neptunAlertBorder};
+        --neptunLighterGray: ${neptunLighterGray};
+        --neptunMidDark: ${neptunMidDark};
+        --neptunPrimary: ${neptunPrimary};
+        --neptunPrimaryDark: ${neptunPrimaryDark};
+        --neptunPrimaryLight: ${neptunPrimaryLight};
+        --npuGreen: ${npuGreen};
+        --npuYellow: ${npuYellow};
+        --npuRed: ${npuRed};
+        --neptunFont: ${neptunFont};
+        --darkText: ${darkText};
+    }
+    `;
+
+    console.log("[Neptun Rice] Injecting CSS");
+
+    GM_addStyle(injectorCss);
 
     window.addEventListener("load", () => {
         console.log("[Neptun Rice] Window loaded, continuing");
@@ -72,7 +106,7 @@
         let scriptName = document.createElement("a");
         scriptName.href = "https://glorantv.web.elte.hu/";
         scriptName.target = "_blank";
-        scriptName.innerText = `${GM_info.script.name} v${GM_info.script.version}:`;
+        scriptName.innerText = `${GM_info.script.name} ${GM_info.script.version}:`;
 
         let settingsButton = document.createElement("a");
         settingsButton.innerText = "Settings";
@@ -234,35 +268,4 @@
 
         console.log("[Neptun Rice] Done");
     });
-
-    let injectorCss = String.raw`
-    @import url("${loginCssUrl}");
-    @import url("${imagesCssUrl}");
-    @import url("${neptunCssUrl}");
-
-    :root {
-        --textColor: ${textColor};
-        --backgroundColor: ${backgroundColor};
-        --darkerBackground: ${darkerBackground};
-        --neptunBorderColor: ${neptunBorderColor};
-        --neptunLightGray: ${neptunLightGray};
-        --neptunDarkGray: ${neptunDarkGray};
-        --neptunAlertBackground: ${neptunAlertBackground};
-        --neptunAlertBorder: ${neptunAlertBorder};
-        --neptunLighterGray: ${neptunLighterGray};
-        --neptunMidDark: ${neptunMidDark};
-        --neptunPrimary: ${neptunPrimary};
-        --neptunPrimaryDark: ${neptunPrimaryDark};
-        --neptunPrimaryLight: ${neptunPrimaryLight};
-        --npuGreen: ${npuGreen};
-        --npuYellow: ${npuYellow};
-        --npuRed: ${npuRed};
-        --neptunFont: ${neptunFont};
-        --darkText: ${darkText};
-    }
-    `;
-
-    console.log("[Neptun Rice] Injecting CSS");
-
-    GM_addStyle(injectorCss);
 })();
