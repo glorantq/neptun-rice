@@ -2,7 +2,7 @@
 // @name         Neptun Rice
 // @namespace    https://glorantv.hu/
 // @homepage     https://github.com/glorantq/neptun-rice
-// @version      v1.3.5
+// @version      v1.3.6
 // @description  Extensive theming for Neptun (dark base only)
 // @author       Gerber Lóránt Viktor
 // @match        https://neptun.elte.hu/*
@@ -15,8 +15,6 @@
 // @updateURL    https://github.com/glorantq/neptun-rice/releases/latest/download/Neptun.Rice.user.js
 // @downloadURL  https://github.com/glorantq/neptun-rice/releases/latest/download/Neptun.Rice.user.js
 // @supportURL   https://github.com/glorantq/neptun-rice/issues
-// @require      https://code.jquery.com/jquery-1.11.1.min.js
-// @require      https://code.jquery.com/ui/1.11.1/jquery-ui.min.js
 // ==/UserScript==
 
 (async function() {
@@ -121,9 +119,6 @@
 
         let settingsButton = document.createElement("a");
         settingsButton.innerText = "Settings";
-        settingsButton.onclick = () => {
-            $("#ndm_settings_dialog").dialog("open");
-        };
 
         attribution1.appendChild(scriptName);
         attribution1.appendChild(settingsButton);
@@ -134,63 +129,71 @@
         footer.appendChild(attribution1);
         footer.appendChild(attribution2);
 
+        let dialogContainer = document.createElement("div");
+        dialogContainer.id = "ndm_dialog_container";
+
         let settingsDialog = document.createElement("div");
         settingsDialog.title = `${GM.info.script.name} Settings`;
         settingsDialog.id = "ndm_settings_dialog";
         settingsDialog.innerHTML = `
+<div id="ndm_settings_inner">
 <div class="ndm_property_wrapper">
-    <h2>Theme colours</h2>
-    <ul class="ndm_property_list">
-        <li><span>Primary</span><input type="color" value="${neptunPrimary}" name="neptunPrimary"></li>
-        <li><span>Primary (dark)</span><input type="color" value="${neptunPrimaryDark}" name="neptunPrimaryDark"></li>
-        <li><span>Primary (light)</span><input type="color" value="${neptunPrimaryLight}" name="neptunPrimaryLight"></li>
-    </ul>
+<h2>Theme colours</h2>
+<ul class="ndm_property_list">
+    <li><span>Primary</span><input type="color" value="${neptunPrimary}" name="neptunPrimary"></li>
+    <li><span>Primary (dark)</span><input type="color" value="${neptunPrimaryDark}" name="neptunPrimaryDark"></li>
+    <li><span>Primary (light)</span><input type="color" value="${neptunPrimaryLight}" name="neptunPrimaryLight"></li>
+</ul>
 </div>
 <div class="ndm_property_wrapper">
 <h2>Neptun PowerUp! colours</h2>
 <ul class="ndm_property_list">
-    <li><span>Green</span><input type="color" value="${npuGreen}" name="npuGreen"></li>
-    <li><span>Yellow</span><input type="color" value="${npuYellow}" name="npuYellow"></li>
-    <li><span>Red</span><input type="color" value="${npuRed}" name="npuRed"></li>
+<li><span>Green</span><input type="color" value="${npuGreen}" name="npuGreen"></li>
+<li><span>Yellow</span><input type="color" value="${npuYellow}" name="npuYellow"></li>
+<li><span>Red</span><input type="color" value="${npuRed}" name="npuRed"></li>
 </ul>
 </div>
 <div class="ndm_property_wrapper">
 <h2>Common base colours</h2>
 <ul class="ndm_property_list">
-    <li><span>Text colour</span><input type="color" value="${textColor}" name="textColor"></li>
-    <li><span>Text colour (dark)</span><input type="color" value="${darkText}" name="darkText"></li>
-    <li><span>Background colour</span><input type="color" value="${backgroundColor}" name="backgroundColor"></li>
-    <li><span>Background colour (darker)</span><input type="color" value="${darkerBackground}" name="darkerBackground"></li>
+<li><span>Text colour</span><input type="color" value="${textColor}" name="textColor"></li>
+<li><span>Text colour (dark)</span><input type="color" value="${darkText}" name="darkText"></li>
+<li><span>Background colour</span><input type="color" value="${backgroundColor}" name="backgroundColor"></li>
+<li><span>Background colour (darker)</span><input type="color" value="${darkerBackground}" name="darkerBackground"></li>
 </ul>
 </div>
 <div class="ndm_property_wrapper">
 <h2>Neptun base colours</h2>
 <ul class="ndm_property_list">
-    <li><span>Lighter grey</span><input type="color" value="${neptunLighterGray}" name="neptunLighterGray"></li>
-    <li><span>Light grey</span><input type="color" value="${neptunLightGray}" name="neptunLightGray"></li>
-    <li><span>Middle grey</span><input type="color" value="${neptunMidDark}" name="neptunMidDark"></li>
-    <li><span>Dark grey</span><input type="color" value="${neptunDarkGray}" name="neptunDarkGray"></li>
-    <li><span>Border colour</span><input type="color" value="${neptunBorderColor}" name="neptunBorderColor"></li>
-    <li><span>Alert background</span><input type="color" value="${neptunAlertBackground}" name="neptunAlertBackground"></li>
-    <li><span>Alert border</span><input type="color" value="${neptunAlertBorder}" name="neptunAlertBorder"></li>
+<li><span>Lighter grey</span><input type="color" value="${neptunLighterGray}" name="neptunLighterGray"></li>
+<li><span>Light grey</span><input type="color" value="${neptunLightGray}" name="neptunLightGray"></li>
+<li><span>Middle grey</span><input type="color" value="${neptunMidDark}" name="neptunMidDark"></li>
+<li><span>Dark grey</span><input type="color" value="${neptunDarkGray}" name="neptunDarkGray"></li>
+<li><span>Border colour</span><input type="color" value="${neptunBorderColor}" name="neptunBorderColor"></li>
+<li><span>Alert background</span><input type="color" value="${neptunAlertBackground}" name="neptunAlertBackground"></li>
+<li><span>Alert border</span><input type="color" value="${neptunAlertBorder}" name="neptunAlertBorder"></li>
 </ul>
 </div>
 <div class="ndm_property_wrapper">
 <h2>Advanced</h2>
 <ul class="ndm_property_list">
-    <li><span>Login page stylesheet</span><input type="text" value="${loginCssUrl}" name="loginCssUrl"></li>
-    <li><span>Neptun stylesheet</span><input type="text" value="${neptunCssUrl}" name="neptunCssUrl"></li>
-    <li><span>Images stylesheet</span><input type="text" value="${imagesCssUrl}" name="imagesCssUrl"></li>
+<li><span>Login page stylesheet</span><input type="text" value="${loginCssUrl}" name="loginCssUrl"></li>
+<li><span>Neptun stylesheet</span><input type="text" value="${neptunCssUrl}" name="neptunCssUrl"></li>
+<li><span>Images stylesheet</span><input type="text" value="${imagesCssUrl}" name="imagesCssUrl"></li>
 </ul>
 </div>
 <div class="ndm_property_wrapper">
 <h2>Miscellaneous</h2>
 <ul class="ndm_property_list">
-    <li><span>Version</span><span>${GM.info.script.version}</span></li>
-    <li><span>Reset to default</span><a class="GadgetMenuItem" id="ndm_reset_colors_button">Reset</a></li>
-    <li><span>Export theme</span><a class="GadgetMenuItem" id="ndm_export_button">Export</a></li>
-    <li><span>Import theme</span><a class="GadgetMenuItem" id="ndm_import_button">Import</a></li>
+<li><span>Version</span><span>${GM.info.script.version}</span></li>
+<li><span>Reset to default</span><a class="GadgetMenuItem" id="ndm_reset_colors_button">Reset</a></li>
+<li><span>Export theme</span><a class="GadgetMenuItem" id="ndm_export_button">Export</a></li>
+<li><span>Import theme</span><a class="GadgetMenuItem" id="ndm_import_button">Import</a></li>
 </ul>
+</div>
+</div>
+<div id="ndm_settings_buttons">
+<button class="button" type="button" id="ndm_settings_close">Close</button><button class="button" type="button" id="ndm_settings_save">Save</button>
 </div>
         `;
 
@@ -198,12 +201,9 @@
 
         document.body.appendChild(footer);
 
-        if(!window.location.toString().match(/^https?:\/\/hallgato[0-9]+.neptun.elte.hu\/main.aspx.*$/)) {
-            return;
-        }
-
         console.log("[Neptun Rice] Creating settings dialog")
-        document.body.appendChild(settingsDialog);
+        dialogContainer.appendChild(settingsDialog);
+        document.body.appendChild(dialogContainer);
 
         let listProperties = () => {
             return document.querySelectorAll(".ndm_property_list > li input");
@@ -259,23 +259,20 @@
             window.location.reload();
         }
 
-        $("#ndm_settings_dialog").dialog({
-            autoOpen: false, modal: true, stack: true, resizable: true,
-            width: 670, height: 670,
-            title: `${GM.info.script.name} Settings`,
-            buttons: [
-                {
-                    text: "Cancel",
-                    click: () => { $("#ndm_settings_dialog").dialog("close"); }
-                },
-                {
-                    text: "Save",
-                    click: () => {
-                        setTimeout(saveColors, 1);
-                    }
-                }
-            ]
-        });
+        let openSettingsDialog = () => {
+            dialogContainer.className = "ndm-dialog-visible";
+        }
+
+        let closeSettingsDialog = () => {
+            dialogContainer.className = "";
+        }
+
+        settingsButton.onclick = openSettingsDialog;
+
+        document.getElementById("ndm_settings_close").onclick = closeSettingsDialog;
+        document.getElementById("ndm_settings_save").onclick = () => {
+            setTimeout(saveColors, 1);
+        };
 
         console.log("[Neptun Rice] Done");
     });

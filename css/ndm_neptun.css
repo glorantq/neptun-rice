@@ -1016,9 +1016,46 @@ li.menu-item {
 }
 
 #ndm_settings_dialog {
+    display: flex;
+    flex-direction: column;
+    width: 670px;
+    height: 670px;
+    background-color: var(--backgroundColor);
+    padding: 0.5rem;
+    border: 2px solid var(--neptunBorderColor);
+}
+
+#ndm_settings_inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
+    height: 100%;
+}
+
+#ndm_settings_buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 0.3rem;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#ndm_dialog_container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 10, 10, 0.85);
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+#ndm_dialog_container.ndm-dialog-visible {
+    display: flex;
 }
 
 .ndm_property_list {
