@@ -2,7 +2,7 @@
 // @name         Neptun Rice
 // @namespace    https://glorantv.hu/
 // @homepage     https://github.com/glorantq/neptun-rice
-// @version      v1.3.2
+// @version      v1.3.3
 // @description  Extensive theming for Neptun (dark base only)
 // @author       Gerber Lóránt Viktor
 // @match        https://neptun.elte.hu/*
@@ -17,29 +17,29 @@
 // @supportURL   https://github.com/glorantq/neptun-rice/issues
 // ==/UserScript==
 
-(function() {
+(async function() {
     'use strict';
 
-    let textColor = GM.getValue("textColor", "#dddddd");
-    let darkText = GM.getValue("darkText", "#121212");
-    let backgroundColor = GM.getValue("backgroundColor", "#1f1e1e");
-    let darkerBackground = GM.getValue("darkerBackground", "#171616");
+    let textColor = await GM.getValue("textColor", "#dddddd");
+    let darkText = await GM.getValue("darkText", "#121212");
+    let backgroundColor = await GM.getValue("backgroundColor", "#1f1e1e");
+    let darkerBackground = await GM.getValue("darkerBackground", "#171616");
 
-    let neptunBorderColor = GM.getValue("neptunBorderColor", "#232222");
-    let neptunLightGray = GM.getValue("neptunLightGray", "#313131");
-    let neptunDarkGray = GM.getValue("neptunDarkGray", "#121212");
-    let neptunAlertBackground = GM.getValue("neptunAlertBackground", "#FFDCA9");
-    let neptunAlertBorder = GM.getValue("neptunAlertBorder", "#FAAB78");
-    let neptunLighterGray = GM.getValue("neptunLighterGray", "#474747");
-    let neptunMidDark = GM.getValue("neptunMidDark", "#232222");
+    let neptunBorderColor = await GM.getValue("neptunBorderColor", "#232222");
+    let neptunLightGray = await GM.getValue("neptunLightGray", "#313131");
+    let neptunDarkGray = await GM.getValue("neptunDarkGray", "#121212");
+    let neptunAlertBackground = await GM.getValue("neptunAlertBackground", "#FFDCA9");
+    let neptunAlertBorder = await GM.getValue("neptunAlertBorder", "#FAAB78");
+    let neptunLighterGray = await GM.getValue("neptunLighterGray", "#474747");
+    let neptunMidDark = await GM.getValue("neptunMidDark", "#232222");
 
-    let neptunPrimary = GM.getValue("neptunPrimary", "#EB8242");
-    let neptunPrimaryDark = GM.getValue("neptunPrimaryDark", "#C9753D");
-    let neptunPrimaryLight = GM.getValue("neptunPrimaryLight", "#F1AE89");
+    let neptunPrimary = await GM.getValue("neptunPrimary", "#EB8242");
+    let neptunPrimaryDark = await GM.getValue("neptunPrimaryDark", "#C9753D");
+    let neptunPrimaryLight = await GM.getValue("neptunPrimaryLight", "#F1AE89");
 
-    let npuGreen = GM.getValue("npuGreen", "#83B582");
-    let npuYellow = GM.getValue("npuYellow", "#FCDDB0");
-    let npuRed = GM.getValue("npuRed", "#EF4B4B");
+    let npuGreen = await GM.getValue("npuGreen", "#83B582");
+    let npuYellow = await GM.getValue("npuYellow", "#FCDDB0");
+    let npuRed = await GM.getValue("npuRed", "#EF4B4B");
 
     let neptunFont = `system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`;
 
@@ -48,9 +48,9 @@
         cssBaseUrl = "http://127.0.0.1:8080/css"
     }
 
-    let loginCssUrl = GM.getValue("loginCssUrl", `${cssBaseUrl}/ndm_login.css`);
-    let neptunCssUrl = GM.getValue("neptunCssUrl", `${cssBaseUrl}/ndm_neptun.css`);
-    let imagesCssUrl = GM.getValue("imagesCssUrl", `${cssBaseUrl}/ndm_images.css`);
+    let loginCssUrl = await GM.getValue("loginCssUrl", `${cssBaseUrl}/ndm_login.css`);
+    let neptunCssUrl = await GM.getValue("neptunCssUrl", `${cssBaseUrl}/ndm_neptun.css`);
+    let imagesCssUrl = await GM.getValue("imagesCssUrl", `${cssBaseUrl}/ndm_images.css`);
 
 
     let injectorCss = String.raw`
@@ -201,13 +201,13 @@
             return document.querySelectorAll(".ndm_property_list > li input");
         };
 
-        let resetColors = () => {
+        let resetColors = async () => {
             if(!confirm("Do you really want to delete all saved settings?")) {
                 return;
             }
 
             for(let setting of listProperties()) {
-                GM.deleteValue(setting.name);
+                await GM.deleteValue(setting.name);
             }
 
             alert("Deleted all saved colours!");
@@ -242,10 +242,10 @@
 
         document.getElementById("ndm_import_button").onclick = importTheme;
 
-        let saveColors = () => {
+        let saveColors = async () => {
             for(let setting of listProperties()) {
                 console.log(`${setting.name} => ${setting.value}`);
-                GM.setValue(setting.name, setting.value);
+                await GM.setValue(setting.name, setting.value);
             }
 
             window.location.reload();
