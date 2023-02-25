@@ -1015,22 +1015,37 @@ li.menu-item {
     cursor: pointer;
 }
 
+#ndm_settings_dialog h2 {
+    font-size: 11px;
+    font-weight: bold;
+    border-bottom: 1px solid var(--neptunBorderColor);
+}
+
 #ndm_settings_dialog {
     display: flex;
     flex-direction: column;
-    width: 670px;
-    height: 670px;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: min(670px, 75%);
+    height: min(670px, 75%);
     background-color: var(--backgroundColor);
     padding: 0.5rem;
     border: 2px solid var(--neptunBorderColor);
+    overflow: scroll;
+    font-size: 11px;
 }
 
 #ndm_settings_inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
-    height: 100%;
 }
+
+@media screen and (max-width: 600px) {
+    #ndm_settings_inner {
+        grid-template-columns: 1fr;
+    }
+  }
 
 #ndm_settings_buttons {
     display: flex;
@@ -1038,10 +1053,11 @@ li.menu-item {
     gap: 0.3rem;
     align-items: center;
     justify-content: flex-end;
+    width: 100%;
 }
 
 #ndm_dialog_container {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
