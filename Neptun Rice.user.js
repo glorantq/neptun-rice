@@ -2,7 +2,7 @@
 // @name         Neptun Rice
 // @namespace    https://glorantv.hu/
 // @homepage     https://github.com/glorantq/neptun-rice
-// @version      v1.2.1
+// @version      v1.3.0
 // @description  Extensive theming for Neptun (dark base only)
 // @author       Gerber Lóránt Viktor
 // @match        https://neptun.elte.hu/*
@@ -104,7 +104,7 @@
         attribution1.id = "ndm_attribution1";
 
         let scriptName = document.createElement("a");
-        scriptName.href = "https://glorantv.web.elte.hu/";
+        scriptName.href = "https://github.com/glorantq/neptun-rice";
         scriptName.target = "_blank";
         scriptName.innerText = `${GM_info.script.name} ${GM_info.script.version}:`;
 
