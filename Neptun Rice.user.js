@@ -2,7 +2,7 @@
 // @name         Neptun Rice
 // @namespace    https://glorantv.hu/
 // @homepage     https://github.com/glorantq/neptun-rice
-// @version      v1.3.0
+// @version      v1.3.1
 // @description  Extensive theming for Neptun (dark base only)
 // @author       Gerber Lóránt Viktor
 // @match        https://neptun.elte.hu/*
@@ -43,7 +43,7 @@
 
     let neptunFont = `system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`;
 
-    let cssBaseUrl = `https://cdn.jsdelivr.net/gh/glorantq/neptun-rice@${GM_info.script.version}/css`;
+    let cssBaseUrl = `https://rawcdn.githack.com/glorantq/neptun-rice/${GM_info.script.version}/css`;
 
     let loginCssUrl = GM_getValue("loginCssUrl", `${cssBaseUrl}/ndm_login.css`);
     let neptunCssUrl = GM_getValue("neptunCssUrl", `${cssBaseUrl}/ndm_neptun.css`);
