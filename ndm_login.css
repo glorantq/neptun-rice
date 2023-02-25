@@ -1,4 +1,7 @@
-body, a, header, footer {
+body,
+a,
+header,
+footer {
     color: var(--textColor) !important;
 }
 
@@ -6,11 +9,14 @@ body {
     background-color: var(--backgroundColor) !important;
 }
 
-footer.page-footer, nav.navbar, footer {
+footer.page-footer,
+nav.navbar,
+footer {
     background-color: var(--backgroundColor) !important;
 }
 
-div.card, .list-group-item {
+div.card,
+.list-group-item {
     background-color: var(--darkerBackground) !important;
 }
 
@@ -18,7 +24,9 @@ div.card, .list-group-item {
     border-style: none !important;
 }
 
-main > div > h1, main > div.no-gutters, main > div.mx-auto.grid {
+main>div>h1,
+main>div.no-gutters,
+main>div.mx-auto.grid {
     display: none;
 }
 
@@ -27,7 +35,8 @@ main > div > h1, main > div.no-gutters, main > div.mx-auto.grid {
     color: var(--textColor) !important;
 }
 
-.dropdown-item:focus, .dropdown-item:hover {
+.dropdown-item:focus,
+.dropdown-item:hover {
     background-color: var(--backgroundColor) !important;
 }
 

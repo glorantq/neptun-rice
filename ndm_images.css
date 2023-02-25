@@ -1,4 +1,4 @@
-a > img.icon {
+a>img.icon {
     content: url("https://glorantv.web.elte.hu/neptun_assets/x-lg.png") !important;
 }
 
@@ -14,7 +14,8 @@ td.FunctionHeaderRightCorner {
     background-image: url("https://glorantv.web.elte.hu/neptun_assets/content_top_right.png") !important;
 }
 
-td.GadgetHeaderPanelTitle, td.GadgetHeaderPanelButtonLeftMenu {
+td.GadgetHeaderPanelTitle,
+td.GadgetHeaderPanelButtonLeftMenu {
     background-image: url("https://glorantv.web.elte.hu/neptun_assets/gadget_header_center.png") !important;
 }
 
@@ -26,15 +27,20 @@ td.HeaderRightCorner {
     background-image: url("https://glorantv.web.elte.hu/neptun_assets/gadget_header_right.png") !important;
 }
 
-td.GadgetFooterLeftCorner, td.FunctionFooterLeftCorner {
+td.GadgetFooterLeftCorner,
+td.FunctionFooterLeftCorner {
     background-image: url("https://glorantv.web.elte.hu/neptun_assets/gadget_footer_left.png") !important;
 }
 
-td.GadgetFooterRightCorner, td.FunctionFooterRightCorner {
+td.GadgetFooterRightCorner,
+td.FunctionFooterRightCorner {
     background-image: url("https://glorantv.web.elte.hu/neptun_assets/gadget_footer_right.png") !important;
 }
 
-td.gadgetbodyleft, td.gadgetbodyright, td.FunctionLeftSide, td.FunctionRightSide {
+td.gadgetbodyleft,
+td.gadgetbodyright,
+td.FunctionLeftSide,
+td.FunctionRightSide {
     background-image: url("https://glorantv.web.elte.hu/neptun_assets/content_border.png") !important;
 }
 
@@ -102,7 +108,8 @@ td.grid_pagerrow_right {
     background-image: url("https://glorantv.web.elte.hu/neptun_assets/pager_right_top_noborder.png") !important;
 }
 
-td.grid_topfunctionpanel, td.grid_pagerpanel {
+td.grid_topfunctionpanel,
+td.grid_pagerpanel {
     background-image: url("https://glorantv.web.elte.hu/neptun_assets/pager_background_noborder.png") !important;
 }
 
@@ -118,7 +125,8 @@ td.grid_footerrightcorner {
     background-image: url("https://glorantv.web.elte.hu/neptun_assets/pager_right_bottom.png") !important;
 }
 
-td.grid_bottomfunctionpanel, td.grid_RowCount {
+td.grid_bottomfunctionpanel,
+td.grid_RowCount {
     background-image: url("https://glorantv.web.elte.hu/neptun_assets/pager_background.png") !important;
 }
 
@@ -182,15 +190,16 @@ td.grid_searchright {
     background-image: url("https://glorantv.web.elte.hu/neptun_assets/search_line_right.png") !important;
 }
 
-.header_sorteddown > div > div > img {
+.header_sorteddown>div>div>img {
     content: url("https://glorantv.web.elte.hu/neptun_assets/icons8-descending-sorting-48.png");
 }
 
-.header_sortedup > div > div > img {
+.header_sortedup>div>div>img {
     content: url("https://glorantv.web.elte.hu/neptun_assets/icons8-sort-amount-up-reversed-48.png");
 }
 
-.messagetable td, .tableRowName {
+.messagetable td,
+.tableRowName {
     background-image: url("https://glorantv.web.elte.hu/neptun_assets/row_init.png") !important;
 }
 
@@ -202,11 +211,11 @@ input[type=image][title=Frissítés] {
     content: url("https://glorantv.web.elte.hu/neptun_assets/16_ghb_refresh.png") !important;
 }
 
-td.sp_headerimages > img {
+td.sp_headerimages>img {
     content: url("https://glorantv.web.elte.hu/neptun_assets/searchpanel_up.png") !important;
 }
 
-td.FunctionHeaderItem > img {
+td.FunctionHeaderItem>img {
     content: url("https://glorantv.web.elte.hu/neptun_assets/right_arrow.png") !important;
 }
 
@@ -235,106 +244,108 @@ td.FunctionHeaderItem > img {
 }
 
 div .cke_ltr .cke_button__copy_icon {
-	background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -216px !important;
+    background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -216px !important;
 }
 
 div .cke_ltr .cke_button__cut_icon {
-	background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -264px !important;
+    background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -264px !important;
 }
 
 div .cke_ltr .cke_button__paste_icon {
-	background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -312px !important;
+    background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -312px !important;
 }
 
 div .cke_ltr .cke_button__pastefromword_icon {
-	background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -768px !important;
+    background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -768px !important;
 }
 
 div .cke_ltr .cke_button__pastetext_icon {
-	background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -720px !important;
+    background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -720px !important;
 }
 
 div .cke_ltr .cke_button__redo_icon {
-	background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -960px !important;
+    background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -960px !important;
 }
 
 div .cke_ltr .cke_button__undo_icon {
-	background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -1008px !important;
+    background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -1008px !important;
 }
 
 div .cke_button__bold_icon {
-	background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -24px !important;
+    background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -24px !important;
 }
 
 div .cke_button__italic_icon {
-	background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -48px !important;
+    background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -48px !important;
 }
 
 div .cke_button__strike_icon {
-	background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -72px !important;
+    background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -72px !important;
 }
 
 div .cke_button__underline_icon {
-	background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -144px !important;
+    background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -144px !important;
 }
 
 div .cke_button__subscript_icon {
-	background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -96px !important;
+    background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -96px !important;
 }
 
 div .cke_button__superscript_icon {
-	background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -120px !important;
+    background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -120px !important;
 }
 
 div .cke_button__removeformat_icon {
-	background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -792px !important;
+    background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -792px !important;
 }
 
 div .cke_ltr .cke_button__numberedlist_icon {
-	background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -648px !important;
+    background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -648px !important;
 }
 
 div .cke_ltr .cke_button__bulletedlist_icon {
-	background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -600px !important;
+    background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -600px !important;
 }
 
 div .cke_ltr .cke_button__outdent_icon {
-	background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -456px !important;
+    background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -456px !important;
 }
 
 div .cke_ltr .cke_button__indent_icon {
-	background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -408px !important;
+    background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -408px !important;
 }
 
 div .cke_button__blockquote_icon {
-	background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -168px !important;
+    background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -168px !important;
 }
 
 div .cke_button__link_icon {
-	background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -528px !important;
+    background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -528px !important;
 }
 
 div .cke_button__unlink_icon {
-	background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -552px !important;
+    background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -552px !important;
 }
 
 div .cke_button__maximize_icon {
-	background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -672px !important;
+    background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -672px !important;
 }
 
 div .cke_button__table_icon {
-	background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -912px !important;
+    background: url("https://glorantv.web.elte.hu/neptun_assets/icons.png") no-repeat 0 -912px !important;
 }
 
 .ui-widget-header .ui-icon {
-	background-image: url("https://glorantv.web.elte.hu/neptun_assets/ui-icons_222222_256x240.png") !important;
+    background-image: url("https://glorantv.web.elte.hu/neptun_assets/ui-icons_222222_256x240.png") !important;
 }
 
 td.bbit-dp-mp-sel a {
     background: url("https://glorantv.web.elte.hu/neptun_assets/glass-bg.png") repeat-x left top !important;
 }
 
-.bbit-dp-inner th, .bbit-dp-bottom, .bbit-dp-mp-btns {
+.bbit-dp-inner th,
+.bbit-dp-bottom,
+.bbit-dp-mp-btns {
     background: url("https://glorantv.web.elte.hu/neptun_assets/glass-bg.png") repeat-x left top !important;
 }
 
@@ -347,36 +358,41 @@ div.cHead {
     background: url("https://glorantv.web.elte.hu/neptun_assets/headbg.png") repeat-x top !important;
 }
 
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-	background: var(--backgroundColor) url("https://glorantv.web.elte.hu/neptun_assets/ui-bg_glass_75_e6e6e6_1x400.png") 50% 50% repeat-x !important;
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+    background: var(--backgroundColor) url("https://glorantv.web.elte.hu/neptun_assets/ui-bg_glass_75_e6e6e6_1x400.png") 50% 50% repeat-x !important;
 }
 
 .ui-widget-header {
-	background: var(--backgroundColor) url("https://glorantv.web.elte.hu/neptun_assets/ui-bg_highlight-soft_75_cccccc_1x100.png") 50% 50% repeat-x !important;
-}
-
-.ui-dialog{
     background: var(--backgroundColor) url("https://glorantv.web.elte.hu/neptun_assets/ui-bg_highlight-soft_75_cccccc_1x100.png") 50% 50% repeat-x !important;
 }
 
-table#c_messages_gridMessages_bodytable tr.Row1_Bold > td:nth-child(6) > img {
+.ui-dialog {
+    background: var(--backgroundColor) url("https://glorantv.web.elte.hu/neptun_assets/ui-bg_highlight-soft_75_cccccc_1x100.png") 50% 50% repeat-x !important;
+}
+
+table#c_messages_gridMessages_bodytable tr.Row1_Bold>td:nth-child(6)>img {
     content: url("https://glorantv.web.elte.hu/neptun_assets/icons8-secured-letter-48.png");
 }
 
-table#c_messages_gridMessages_bodytable tr > td:nth-child(6) > img {
+table#c_messages_gridMessages_bodytable tr>td:nth-child(6)>img {
     content: url("https://glorantv.web.elte.hu/neptun_assets/icons8-open-envelope-48.png");
 }
 
-table#c_messages_gridMessages_bodytable tr > td:nth-child(3) > img,
-table#c_messages_gridMessages_bodytable tr.Row1_Bold > td:nth-child(3) > img {
+table#c_messages_gridMessages_bodytable tr>td:nth-child(3)>img,
+table#c_messages_gridMessages_bodytable tr.Row1_Bold>td:nth-child(3)>img {
     content: url("https://glorantv.web.elte.hu/neptun_assets/icons8-attach-30.png");
 }
 
-.calendar .calendar_othermonthdaystyle:hover, .calendar .Day:hover,
-.calendar .calendar_othermonthdaystyle:hover, .calendar .calendar_weekendDdystyle:hover {
+.calendar .calendar_othermonthdaystyle:hover,
+.calendar .Day:hover,
+.calendar .calendar_othermonthdaystyle:hover,
+.calendar .calendar_weekendDdystyle:hover {
     background-image: url("https://glorantv.web.elte.hu/neptun_assets/datepicker_today_day.png") !important;
 }
 
-.calendar .SelectedDay, .calendar .TodayDay {
+.calendar .SelectedDay,
+.calendar .TodayDay {
     background-image: url("https://glorantv.web.elte.hu/neptun_assets/datepicker_today_day.png") !important;
 }
