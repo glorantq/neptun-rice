@@ -52,7 +52,6 @@
     let neptunCssUrl = await GM.getValue("neptunCssUrl", `${cssBaseUrl}/ndm_neptun.css`);
     let imagesCssUrl = await GM.getValue("imagesCssUrl", `${cssBaseUrl}/ndm_images.css`);
 
-
     let injectorCss = String.raw`
     @import url("${loginCssUrl}");
     @import url("${imagesCssUrl}");
@@ -82,7 +81,14 @@
 
     console.log("[Neptun Rice] Injecting CSS");
 
-    GM.addStyle(injectorCss);
+    let addCss = (css) => {
+        let styleElement = document.createElement("style");
+        styleElement.innerHTML = css;
+        styleElement.className = "ndm-style";
+        document.head.appendChild(styleElement);
+    };
+
+    addCss(injectorCss);
 
     window.addEventListener("load", () => {
         console.log("[Neptun Rice] Window loaded, continuing");
