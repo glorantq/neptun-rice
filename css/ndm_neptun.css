@@ -512,6 +512,10 @@ div.tartalom>div.elem {
     display: flex;
 }
 
+#h_template_list_gridAvailable_bodytable tr {
+    border-color: var(--neptunBorderColor) !important;
+}
+
 /** Neptun Powerup **/
 
 #h_addsubjects_gridSubjects_grid_body_div #h_addsubjects_gridSubjects_bodytable tr.Row1_Bold td,
