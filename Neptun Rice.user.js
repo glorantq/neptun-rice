@@ -2,7 +2,7 @@
 // @name         Neptun Rice
 // @namespace    https://glorantv.hu/
 // @homepage     https://github.com/glorantq/neptun-rice
-// @version      v1.3.3
+// @version      v1.3.4
 // @description  Extensive theming for Neptun (dark base only)
 // @author       Gerber Lóránt Viktor
 // @match        https://neptun.elte.hu/*
@@ -15,6 +15,7 @@
 // @updateURL    https://github.com/glorantq/neptun-rice/releases/latest/download/Neptun.Rice.user.js
 // @downloadURL  https://github.com/glorantq/neptun-rice/releases/latest/download/Neptun.Rice.user.js
 // @supportURL   https://github.com/glorantq/neptun-rice/issues
+// @require      https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js
 // ==/UserScript==
 
 (async function() {
