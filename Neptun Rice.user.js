@@ -43,9 +43,9 @@
 
     let neptunFont = `system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`;
 
-    let loginCssUrl = GM_getValue("loginCssUrl", "http://127.0.0.1:8080/ndm_login.css");
-    let neptunCssUrl = GM_getValue("neptunCssUrl", "http://127.0.0.1:8080/ndm_neptun.css");
-    let imagesCssUrl = GM_getValue("imagesCssUrl", "http://127.0.0.1:8080/ndm_images.css");
+    let loginCssUrl = GM_getValue("loginCssUrl", "http://127.0.0.1:8080/css/ndm_login.css");
+    let neptunCssUrl = GM_getValue("neptunCssUrl", "http://127.0.0.1:8080/css/ndm_neptun.css");
+    let imagesCssUrl = GM_getValue("imagesCssUrl", "http://127.0.0.1:8080/css/ndm_images.css");
 
     window.addEventListener("load", () => {
         console.log("[Neptun Rice] Window loaded, continuing");
