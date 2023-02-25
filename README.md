@@ -27,3 +27,6 @@ Ha megvan, tudod telepíteni a scriptet, ehhez [kattints ide](https://github.com
   |![image](https://user-images.githubusercontent.com/17655680/221344844-423245fc-63b2-406f-be0e-82b433738825.png)|![image](https://user-images.githubusercontent.com/17655680/221344851-570d0938-f3f7-4a8f-a0bb-db1a7f6f56e5.png)
   
   És így tovább...
+- Neptun PowerUp! integráció:
+  - Meg lehet változtatni a kijelölések színét
+  - A felugró "Kis türelmet..." ablak is követi a beállított primary színt
